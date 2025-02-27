@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Guess the Pokemon</string>
+
+    <!-- navigation -->
+    <string name="home_title">Home</string>
+    <string name="play_title">Play</string>
+    <string name="nav_home">s</string>
+    <string name="nav_play">q</string>
+
+    <!-- Home -->
+    <string name="home_welcome">Welcome!\nOpen any pokéball for more information about each difficulty.</string>
+    <string name="home_card_title">Difficulty: %1$s</string>
+
+    <string name="pokeball_tag">pokeball card</string>
+    <string name="pokeball_desc_tag">pokeball desc</string>
+    <string name="greatball_tag">greatball card</string>
+    <string name="greatball_desc_tag">greatball desc</string>
+    <string name="ultraball_tag">ultraball card</string>
+    <string name="ultraball_desc_tag">ultraball desc</string>
+
+    <string name="easy_one">Silhouette image after %1$s guesses</string>
+    <string name="easy_two"><![CDATA[Generation, first type & first Pokédex entry from start]]></string>
+    <string name="easy_three">Second type shown after %1$s guess</string>
+    <string name="easy_four">Second Pokédex entry shown after %1$s guesses</string>
+
+    <string name="normal_one">Silhouette image after %1$s guesses</string>
+    <string name="normal_two">Only first type known from start, generation after %1$s guess</string>
+    <string name="normal_three">Second type shown after %1$s guesses</string>
+    <string name="normal_four">Second Pokédex entry shown after %1$s guesses</string>
+
+    <string name="hard_one"><![CDATA[Only generation known & silhouette image is never shown]]></string>
+    <string name="hard_two">First type shown after %1$s guesses</string>
+    <string name="hard_three">Second type after %1$s guesses</string>
+    <string name="hard_four">First Pokédex entry shown after %1$s guesses</string>
+
+    <!-- Play -->
+    <string name="select_difficulty">Select a difficulty to start playing.</string>
+    <string name="game_setup">Setting up the game…</string>
+    <string name="game_error_setup">Error while fetching data\nMake sure you have a valid connection.</string>
+    <string name="game_retry">Try again</string>
+
+    <string name="input_place">Place a guess</string>
+    <string name="input_streak">Streak: %1$s</string>
+    <string name="input_guesses">Guesses: %1$s</string>
+    <string name="input_mode">%1$s mode</string>
+
+    <string name="api_fetching">Fetching Pokémon…</string>
+    <string name="game_lost">Better luck next time!</string>
+    <string name="game_restart">Play again</string>
+    <string name="game_won">"Congratulations!\nYou beat %1$s mode "</string>
+    <string name="game_won_first_try">first try!</string>
+    <string name="game_won_attempts">in %1$s attempts</string>
+    <string name="game_won_streak">\nCurrent streak: %1$s</string>
+
+    <string name="input_tag">input tag</string>
+    <string name="finished_tag">finished</string>
+
+    <!-- Pokemon -->
+    <string name="ball_symbol_one">Z</string>
+    <string name="ball_symbol_two">z</string>
+    <string name="ball_symbol_three">X</string>
+    <string name="ball_symbol_four">x</string>
+
+    <string name="poke_generation">Generation: %1$s</string>
+
+    <string name="poke_image_desc">image of %1$s</string>
+    <string name="poke_image_placeholder">placeholder image</string>
+    <string name="poke_shiny_symbol">S</string>
+
+    <string name="poke_type_normal">c</string>
+    <string name="poke_type_fire">r</string>
+    <string name="poke_type_fighting">f</string>
+    <string name="poke_type_water">w</string>
+    <string name="poke_type_flying">v</string>
+    <string name="poke_type_grass">g</string>
+    <string name="poke_type_poison">o</string>
+    <string name="poke_type_electric">l</string>
+    <string name="poke_type_ground">a</string>
+    <string name="poke_type_psychic">p</string>
+    <string name="poke_type_rock">k</string>
+    <string name="poke_type_ice">i</string>
+    <string name="poke_type_bug">b</string>
+    <string name="poke_type_dragon">n</string>
+    <string name="poke_type_ghost">h</string>
+    <string name="poke_type_dark">d</string>
+    <string name="poke_type_steel">m</string>
+    <string name="poke_type_fairy">y</string>
+    <string name="poke_type_unknown">" "</string>
+    <string name="type_unknown">\???</string>
+</resources>
