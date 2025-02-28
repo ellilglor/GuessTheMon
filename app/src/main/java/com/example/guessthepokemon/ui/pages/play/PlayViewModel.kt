@@ -15,9 +15,10 @@ import com.example.guessthepokemon.model.DifficultyModes
 import com.example.guessthepokemon.model.Game
 import com.example.guessthepokemon.model.PokeGameState
 import com.example.guessthepokemon.model.PokeRepoState
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import java.io.IOException
 
@@ -74,22 +75,25 @@ class PlayViewModel(
         gameState = PokeGameState.SelectingDifficulty
     }
 
+    private var getPokemonJob: Job? = null
+
     private fun getRepoPokemon(difficulty: DifficultyModes) {
         pokeRepoState = PokeRepoState.Loading
 
-        try {
-            viewModelScope.launch {
+        getPokemonJob?.cancel()
+
+        getPokemonJob = viewModelScope.launch {
+            try {
                 pokeRepository.refresh()
 
-                pokeRepository.getPokemon().catch {
-                    pokeRepoState = PokeRepoState.Error
-                }.collect {
-                    game = Game(difficulty = difficulty, nameToGuess = it.name)
-                    pokeRepoState = PokeRepoState.Success(it)
-                }
+                pokeRepository.getPokemon()
+                    .collectLatest {
+                        game = Game(difficulty = difficulty, nameToGuess = it.name)
+                        pokeRepoState = PokeRepoState.Success(it)
+                    }
+            } catch (e: IOException) {
+                pokeRepoState = PokeRepoState.Error
             }
-        } catch (e: IOException) {
-            pokeRepoState = PokeRepoState.Error
         }
     }
 
