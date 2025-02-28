@@ -3,6 +3,7 @@ package com.example.guessthepokemon.ui.pages.play.components.other
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardActions
@@ -64,7 +65,7 @@ fun Input(
             R.string.input_streak, streak
         )
         ) },
-        leadingIcon = { PokeballSymbol(modifier = Modifier.padding(start = 3.dp)) },
+        leadingIcon = { PokeballSymbol(modifier = Modifier.padding(start = 3.dp).offset(y = 4.dp)) },
         singleLine = true,
         supportingText = {
             Row(

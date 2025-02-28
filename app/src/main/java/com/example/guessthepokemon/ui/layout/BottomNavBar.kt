@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavBackStackEntry
 import com.example.guessthepokemon.ui.navigation.NavigationRoutes
+import com.example.guessthepokemon.ui.theme.bottomBarColor
 import com.example.guessthepokemon.ui.theme.typeSymbols
 
 /**
@@ -26,7 +27,7 @@ fun BottomNavBar(
     backStackEntry: NavBackStackEntry?,
     modifier: Modifier = Modifier
 ) {
-    NavigationBar(modifier = modifier) {
+    NavigationBar(modifier = modifier, containerColor = bottomBarColor) {
         enumValues<NavigationRoutes>().forEach { route ->
             val isCurrentPage = backStackEntry?.destination?.route == route.name
 
@@ -44,7 +45,7 @@ fun BottomNavBar(
                         fontFamily = typeSymbols,
                         fontSize = 26.sp,
                         fontWeight = if (isCurrentPage) FontWeight.Bold else FontWeight.Normal,
-                        modifier = Modifier.offset(y = 1.dp)
+                        modifier = Modifier.offset(y = 4.dp)
                     )
                 },
                 label = {
